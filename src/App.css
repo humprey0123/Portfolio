@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+/* === Root container === */
+#root {
+  @apply max-w-[1280px] mx-auto p-8 text-center;
+}
+
+/* === Logo styling === */
+.logo {
+  @apply h-24 p-6 transition-transform duration-300 will-change-transform;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+/* Spin animation */
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Only spin if user prefers motion */
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* === Card styling === */
+.card {
+  @apply p-8 bg-white rounded-2xl shadow-md dark:bg-gray-800;
+}
+
+/* === Read-the-docs text === */
+.read-the-docs {
+  @apply text-gray-500 dark:text-gray-400;
+}
+
+/* === Dark mode body background === */
+body {
+  @apply bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+}

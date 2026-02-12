@@ -1,0 +1,34 @@
+            <div class="right-slider" id="rightSlider"
+              data-auto-slide="{{ section.settings.auto_slide }}"
+              data-auto-speed="{{ section.settings.auto_slide_speed }}"
+            >
+              {% for block in section.blocks %}
+                {% if block.type == 'image' %}
+                  {% if block.settings.imageCard != blank %}
+                    <div class="slide">
+                      <a href="{{ block.settings.bannerLinke }}" draggable="false">
+                        <img
+                          src="{{ block.settings.imageCard | image_url: width: 1200 }}"
+                          class="right-slide-image"
+                          width="100%"
+                          height="100%"
+                          loading="lazy"
+                          draggable="false"
+                        >
+                      </a>
+                    </div>
+                  {% else %}
+                    <div class="slide">
+                      {% render 'icon', code: 'placeholder', class: 'right-slide-image' %}
+                    </div>
+                  {% endif %}
+                  {% if block.settings.videoBanner != blank %}
+                    <div class="slide">
+                      <video playsinline muted autoplay loop class="right-slide-image">
+                        {{ block.settings.videoBanner | video_tag }}
+                      </video>
+                    </div>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </div>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Survival</title>
+      <link rel="stylesheet" href="survival.css" />
+   </head>
+   <body>
+      <div id="startScreen" class="starting-screen">
+         <h2>Live</h2>
+         <br />
+         <button id="startButton">Start</button>
+      </div>
+      <div id="gameScreen" class="game-screen" style="display: none">
+         <div id="textPlace">
+            <p></p>
+         </div>
+         <div id="cave" style="display: none">The Cave</div>
+         <div id="forest" style="display: none">The Forest</div>
+         <div id="sea" style="display: none">The Sea</div>
+         <div id="river" style="display: none">The River</div>
+         <div class="bottom">
+            <div class="location">
+               <button id="goCaveBtn">Go to Cave</button>
+               <button id="goForestBtn">Go to Forest</button>
+               <button id="goSeaBtn">Go to Sea</button>
+               <button id="goRiverBtn">Go to River</button>
+            </div>
+            <div class="game-stats">
+               <div class="player-stats">
+                  <span>Health: <span id="healthBar"></span></span>
+                  <span>Hunger: <span id="hungerBar"></span></span>
+                  <span>Thirst: <span id="thirstBar"></span></span>
+               </div>
+               <span id="day">Day: 1</span>
+            </div>
+         </div>
+      </div>
+      <div class="game-over" style="display: none">
+         <h3>You died</h3>
+         <button>Restart</button>
+      </div>
+      <script src="survival.js" type="module"></script>
+   </body>
+</html>
